@@ -5,14 +5,15 @@ using UnityEngine;
 namespace gig.fps
 {
     public sealed class PlayerView :
-        MonoBehaviour
+        MonoBehaviour,
+        IPlayerView
     {
-        public event Action<float> OnGetDamage = context => { };
+        public event Action<float> OnChangeHealth = context => { };
 
 
-        public void AddDamage(float damage)
+        public void ChangeHealth(float hp)
         {
-            OnGetDamage.Invoke(damage);
+            OnChangeHealth.Invoke(hp);
         }
     }
 }

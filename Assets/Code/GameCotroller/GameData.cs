@@ -11,6 +11,9 @@ namespace gig.fps
         [Header("root paths")]
         public string RootPrefabs;
         public string RootDatas;
+        [Header("input controller")]
+        public string RootInputController;
+        public string DataPCUserInput;
         [Header("ui controller")]
         public string RootUIController;
         public string PrfMainCanvas;
@@ -19,6 +22,18 @@ namespace gig.fps
         public string TagPlayerStartPosition;
         public string RootPlayerController;
         public string PrfPlayer;
+        public string DataPlayerMovement;
+
+
+        #region InputController
+
+        public PCInputData GetDataPCUserInput
+        {
+            get =>
+                Load<PCInputData>($"{RootDatas}/{RootInputController}/{DataPCUserInput}");
+        }
+
+        #endregion
 
         #region UIController
 
@@ -30,6 +45,11 @@ namespace gig.fps
         #region PlayerController
 
         public PlayerView GetPrfPlayer { get => Load<PlayerView>($"{RootPrefabs}/{RootPlayerController}/{PrfPlayer}"); }
+        public PlayerMovementData GetDataPlayerMovement
+        {
+            get =>
+                Load<PlayerMovementData>($"{RootDatas}/{RootPlayerController}/{DataPlayerMovement}");
+        }
 
         #endregion
 

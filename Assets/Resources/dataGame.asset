@@ -15,9 +15,12 @@ MonoBehaviour:
   CurrentGameVersion: 0.0.000p
   RootPrefabs: Prefabs
   RootDatas: Datas
+  RootInputController: Input
+  DataPCUserInput: dataPCInput
   RootUIController: UI
   PrfMainCanvas: prfCnsMain
   PrfGameVersion: prfCnsGameVersion
   TagPlayerStartPosition: Player start position
   RootPlayerController: Player
   PrfPlayer: pfbPlayer
+  DataPlayerMovement: dataPlayerMovement
