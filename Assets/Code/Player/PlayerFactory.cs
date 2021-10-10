@@ -20,10 +20,12 @@ namespace gig.fps
             var startPosition = GameObject.FindGameObjectWithTag(_gameData.TagPlayerStartPosition).transform;
             var view = Object.Instantiate(_gameData.GetPrfPlayer, startPosition);
             var movementData = _gameData.GetDataPlayerMovement;
+            var lookData = _gameData.GetDataPlayerLook;
 
             return new PlayerController(
                 view,
                 movementData,
+                lookData,
                 _inputController
                 );
         }
