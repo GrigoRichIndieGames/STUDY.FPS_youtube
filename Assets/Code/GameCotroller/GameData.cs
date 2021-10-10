@@ -23,6 +23,7 @@ namespace gig.fps
         public string RootPlayerController;
         public string PrfPlayer;
         public string DataPlayerMovement;
+        public string DataPlayerLook;
 
 
         #region InputController
@@ -47,8 +48,12 @@ namespace gig.fps
         public PlayerView GetPrfPlayer { get => Load<PlayerView>($"{RootPrefabs}/{RootPlayerController}/{PrfPlayer}"); }
         public PlayerMovementData GetDataPlayerMovement
         {
-            get =>
-                Load<PlayerMovementData>($"{RootDatas}/{RootPlayerController}/{DataPlayerMovement}");
+            get => Load<PlayerMovementData>($"{RootDatas}/{RootPlayerController}/{DataPlayerMovement}");
+        }
+        
+        public PlayerLookData GetDataPlayerLook
+        {
+            get => Load<PlayerLookData>($"{RootDatas}/{RootPlayerController}/{DataPlayerLook}");
         }
 
         #endregion
